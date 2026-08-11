@@ -1,0 +1,141 @@
+{
+  "layer": "top",
+  "position": "left",
+  "reload_style_on_change": true,
+  "width": 44,
+  "style": "~/.config/waybar/style.css",
+  "margin-left": 0,
+  "margin-right": 0,
+  "margin-top": 0,
+  "margin-bottom": 0,
+  "spacing": 0,
+  "gtk-layer-shell": true,
+  "output": ["HDMI-A-1", "eDP-1"],
+
+
+  "modules-left": [
+    "hyprland/workspaces",
+    "mpris"
+  ],
+
+  "modules-center": [
+    "clock"
+  ],
+
+  "modules-right": [
+    "tray",
+    //"wireplumber",
+    "pulseaudio",
+    // "backlight",
+    "bluetooth",
+    "network",
+    "battery"
+  ],
+
+  "custom/power": {
+    "format": " 󰤆 ",
+    "on-click": "wleave",
+    "tooltip": false
+  },
+
+  "clock": {
+    "format":  "{:%d\n%m\n──\n%I\n%M}", 
+    //"rotate": 90,
+    "tooltip": false
+  },
+
+  "hyprland/workspaces": {
+    "on-click": "activate",
+    "active-only": false,
+    "all-outputs": true,
+    "format": "{name}",
+    "tooltip": false
+  },
+
+  "mpris": {
+    "format": "title}",
+    "format-playing": "󰏤 {title}",
+    "format-paused": "󰐊 {title}",
+    "rotate": 90,
+    "max-length": 20,
+    "min-length": 10,
+    "on-click": "playerctl play-pause",
+    "on-scroll-up": "playerctl previous",
+    "on-scroll-down": "playerctl next",
+    "tooltip": false
+  },
+
+  "battery": {
+    "states": {
+      "good": 60,
+      "warning": 30,
+      "critical": 15
+    },
+
+    "format": " {icon}\n{capacity}",
+    // "format-alt": " {icon}\n{capacity}",
+    "format-plugged": "{󰂄}",
+    "format-icons": ["󰂎","󰁺","󰁻","󰁼","󰁽","󰁾","󰁿","󰂀","󰂁","󰂂","󰁹"],
+    "tooltip": false
+  },
+
+  "network": {
+    "format-wifi": " {icon}",
+    "format-ethernet": "󰈀",
+    "format-icons": ["󰤯 ", "󰤟 ", "󰤢 ", "󰤨 "],
+    "format-disconnected": "󰪎",
+    "on-click": "kitty -e nmtui",
+    "interval": 3,
+    "tooltip": false
+  },
+
+  "bluetooth": {
+    "format": "󰂰",
+    "format-on": "󰂰",
+    "format-off": "󰂲",
+    "format-disabled" : "󰂲"
+    // "format-connected" : "{device_enumerate}   {device_battery_percentage}%"
+},
+
+  "backlight": {
+    "device": "intel_backlight",
+    "format-alt": "{icon}",
+    "format": " {icon}\n{percent}",
+    "format-icons": ["","","","","","","","","","","","","",""],
+    "tooltip": false,
+    "on-click-right": "~/.config/waybar/scripts/sunset-toggle.sh"
+  },
+
+  "wireplumber": {
+    "format": "{icon}",
+    "format-alt": " {icon}\n{volume}",
+    "format-icons": ["","󰪞","󰪟","󰪠","󰪡","󰪢","󰪣","󰪤","󰪥"],
+    "format-muted": "",
+    "max-volume": 99,
+    "on-click-right": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
+    "on-click-middle": "blueman-manager"
+  },
+
+  "pulseaudio": {
+    "rotate" : 90,
+    "format": "{icon}  {volume}%",
+    "format-muted": "",
+    "format-icons": {
+        "headphone": "",
+        "headset": "",
+        "headphone-muted": "󰟎",
+        "headset-muted": "󰟎",
+        "default": ["", ""],
+        "default-muted": "󰖁"
+    },
+    "on-click": "pavucontrol"
+  },
+  
+  "tray" : {
+    "icon-size": 13,
+    "spacing": 10,
+    "cursor": true
+  }
+
+}
+

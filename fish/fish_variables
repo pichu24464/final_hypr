@@ -1,0 +1,9 @@
+# This file contains fish universal variable definitions.
+# VERSION: 3.0
+SETUVAR --export BROWSER:firefox
+SETUVAR --export EDITOR:nvim
+SETUVAR --export GTK_THEME:Adwaita\x3adark
+SETUVAR --export VISUAL:nvim
+SETUVAR --export XCURSOR_SIZE:35
+SETUVAR --export XCURSOR_THEME:macOS
+SETUVAR __fish_initialized:4300

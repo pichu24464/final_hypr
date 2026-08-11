@@ -1,0 +1,19 @@
+[colors.primary]
+background = "#1e1e1e"
+foreground = "#c5c8c6"
+
+[font]
+size = 18
+
+[window.padding]
+# x = 40
+# y = 40
+
+x = 10
+y = 40
+
+[window]
+opacity = 0.95
+
+[general]
+live_config_reload = true
